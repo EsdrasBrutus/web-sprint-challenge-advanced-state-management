@@ -13,7 +13,7 @@ import { fetchSmurfs } from './actions'
 class App extends Component {
   
   componentDidMount() {
-    fetchSmurfs();
+    this.props.fetchSmurfs();
   }
 
   render() {
@@ -22,7 +22,7 @@ class App extends Component {
         <Header />
 
         <main>
-          {<SmurfList /> }
+          {<SmurfList smurfs={this.props.smurfs} loading={this.props.loading} /> }
           <AddForm/>
         </main>
       </div>
@@ -30,9 +30,16 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+      smurfs: state.smurfs,
+      loading: state.loading
+  }
+}
+
 const mapDispatchToProps = {fetchSmurfs}
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.

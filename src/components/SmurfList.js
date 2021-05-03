@@ -1,14 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Smurf from './Smurf';
 import { connect } from 'react-redux'
 import { fetchSmurfs } from '../actions'
 
  const SmurfList = (props)=> {
     const isLoading = props.loading;
-    
-    useEffect(()=>{
-        props.fetchSmurfs();
-    }, [])
 
     if (isLoading) {
         return <h1>Loading...</h1>;
@@ -22,16 +18,8 @@ import { fetchSmurfs } from '../actions'
     </div>);
 }
 
-const mapStateToProps = (state) => {
-    return {
-        smurfs: state.smurfs,
-        loading: state.loading
-    }
-}
 
-const mapDispatchToProps = {fetchSmurfs}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SmurfList);
+export default SmurfList;
 
 
 //Task List:
