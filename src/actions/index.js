@@ -19,10 +19,10 @@ export const fetchSmurfs = () => (dispatch)=>{
         })
 }
 
-export function addSmurf(newSmurf) {
+export function addSmurf(name, position, nickname,description) {
     return {
         type: ADD_SMURF,
-        payload: newSmurf,
+        payload: {name, position, nickname, description}
     };
 }
 

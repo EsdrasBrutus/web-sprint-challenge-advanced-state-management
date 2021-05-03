@@ -17,11 +17,11 @@ const reducer = (state= initialState, action)=>{
         case ADD_SMURF:
             const newSmurf ={
                 id: Date.now(),
-                name: action.payload, 
-                nickname: action.payload, 
-                position: action.payload, 
-                summary: action.payload
-            }
+                name: action.payload.name, 
+                nickname: action.payload.nickname, 
+                position: action.payload.position, 
+                description: action.payload.description
+            };
 
             return{
                 ...state,
