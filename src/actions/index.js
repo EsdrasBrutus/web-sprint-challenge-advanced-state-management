@@ -26,7 +26,7 @@ export function addSmurf(newSmurf) {
     };
 }
 
-export function errorEdit(newError){
+export function setError(newError){
     return {
         type: EDIT_ERROR,
         payload: newError,

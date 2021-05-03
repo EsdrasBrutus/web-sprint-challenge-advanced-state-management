@@ -22,7 +22,7 @@ const reducer = (state= initialState, action)=>{
                 position: action.payload, 
                 summary: action.payload
             }
-            
+
             return{
                 ...state,
                 smurfs: [...state.smurfs, newSmurf]
